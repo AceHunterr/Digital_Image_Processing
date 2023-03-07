@@ -478,3 +478,27 @@ let drawing = [
 {x:897.8888654708862,y: 1052.9395294189453},
 {x:920.9927272796631,y: 1068.0641555786133},
 ];
+
+
+function scale (number, inMin, inMax, outMin, outMax) {
+    return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+}
+
+new_drawing = []
+
+for (let i = 0; i < drawing.length; i +=100) {   
+    new_x = scale(drawing[i].x,-400,600,0,100)
+    new_y = scale(drawing[i].y,-100,600,0,100)
+    console.log(new_x,new_y)
+    var arr = new Array();
+    arr.push({ x : new_x, y : new_y });
+    new_drawing.push(arr)
+}
+
+
+console.log(new_drawing)
+new_drawing.sort(function(a, b){
+    return a.x - b.x;
+  });
+
+console.log(new_drawing)

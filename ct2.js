@@ -498,7 +498,7 @@ for (let i = 0; i < drawing.length; i +=100) {
 
 console.log(new_drawing)
 new_drawing.sort(function(a, b){
-    return a.x - b.x;
+    return b.x - a.x;
   });
 
 console.log(new_drawing)
